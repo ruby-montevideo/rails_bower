@@ -1,3 +1,10 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+# Demonstrate the combined use of CoffeeScript, jQuery and Moment. Update the
+# current time reading on every second.
+
+updateCurrentTime = ->
+  $('#current-time').text moment().format('MMMM Do YYYY, h:mm:ss a')
+
+setupUpdates = ->
+  setInterval updateCurrentTime, 1000
+
+$(setupUpdates)
